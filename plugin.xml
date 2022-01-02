@@ -20,10 +20,9 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 
     <preference name="APP_DOMAIN_NAME" />
     <preference name="APP_DOMAIN_PATH" default="/" />
-
-    <dependency id="cordova-plugin-firebase-analytics" version="8.4.0"/>
-
     <platform name="ios">
+        <preference name="IOS_FIREBASE_POD_VERSION" default="~> 8.8.0"/>
+
         <config-file parent="/*" target="config.xml">
             <preference name="DOMAIN_URI_PREFIX" value="https://$APP_DOMAIN_NAME$APP_DOMAIN_PATH"/>
             <feature name="FirebaseDynamicLinks">
@@ -75,7 +74,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                 <source url="https://cdn.cocoapods.org/" />
             </config>
             <pods>
-                <pod name="Firebase/DynamicLinks" spec="8.4.0" />
+                <pod name="Firebase/DynamicLinks" spec="$IOS_FIREBASE_POD_VERSION" />
             </pods>
         </podspec>
     </platform>
